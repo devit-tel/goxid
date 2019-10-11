@@ -18,7 +18,7 @@ func New() *ID {
 	return instance
 }
 
-func (i ID) Gen() string {
+func (i *ID) Gen() string {
 	if i.freezeID != "" {
 		return i.freezeID
 	}
