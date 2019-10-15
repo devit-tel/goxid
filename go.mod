@@ -1,4 +1,4 @@
-module github.com/nqmt/goxid
+module github.com/devit-tel/goxid
 
 go 1.12
 
