@@ -1,7 +1,6 @@
 package goxid
 
 import (
-	"fmt"
 	"reflect"
 	"testing"
 
@@ -30,7 +29,7 @@ func TestId(t *testing.T) {
 
 		id1 := tid.GenObjectID()
 		id2 := tid.GenObjectID()
-		fmt.Println(id1)
+
 		require.NotEqual(t, id1, id2)
 	})
 
