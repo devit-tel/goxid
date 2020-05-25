@@ -36,5 +36,5 @@ func (i *ID) GenObjectID() string {
 		return i.freezeID
 	}
 
-	return mongo.NewObjectID().String()
+	return mongo.NewObjectID().Hex()
 }

@@ -1,9 +1,11 @@
 package goxid
 
 import (
-	"github.com/stretchr/testify/require"
+	"fmt"
 	"reflect"
 	"testing"
+
+	"github.com/stretchr/testify/require"
 )
 
 func TestId(t *testing.T) {
@@ -23,6 +25,15 @@ func TestId(t *testing.T) {
 		require.NotEqual(t, id1, id2)
 	})
 
+	t.Run("always generate new object id", func(t *testing.T) {
+		tid := New()
+
+		id1 := tid.GenObjectID()
+		id2 := tid.GenObjectID()
+		fmt.Println(id1)
+		require.NotEqual(t, id1, id2)
+	})
+
 	t.Run("freeze id", func(t *testing.T) {
 		tid := New()
 
@@ -37,4 +48,3 @@ func TestId(t *testing.T) {
 		require.Equal(t, expect, id2)
 	})
 }
-
